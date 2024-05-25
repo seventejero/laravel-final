@@ -10,17 +10,17 @@
     @endif
 
     <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ route('verification.send') }}">
+        <form method="POST" action="{{ route('verification.send') }}" class="row g-3 needs-validation" >
             @csrf
 
             <div>
-                <x-primary-button>
+                <x-primary-button class="btn btn-primary w-100">
                     {{ __('Resend Verification Email') }}
                 </x-primary-button>
             </div>
         </form>
 
-        <form method="POST" action="{{ route('logout') }}">
+        <form method="POST" action="{{ route('logout') }}" class="row g-3 needs-validation">
             @csrf
 
             <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
