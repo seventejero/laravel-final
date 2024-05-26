@@ -52,7 +52,15 @@
                                         <tr>
                                             <td>{{$post -> subject}}</td>
                                             <td>{{$post -> post}}</td>
-                                            <td style="color: blue">{{ ($post -> status == 1 ? 'Published':'Unpublished') }}</td>
+                                            <td><span class="badge bg-{{ $post->status == 1 ? 'success' : 'warning' }} status-badge">{{ $post->status == 1 ? 'Published' : 'Unpublished' }}</span></td>
+                                            <style>
+                                                .status-badge {
+                                                    padding: 5px 10px; /* Adjust padding as needed */
+                                                    border-radius: 8px; /* Adjust border-radius as needed */
+                                                    font-size: 14px; /* Adjust font size as needed */
+                                                    text-transform: capitalize; /* Capitalize the status text */
+                                                }
+                                            </style>
                                             <td style="text-align:center;">
                                             <a href="{{ route('post.show', $post) }}" class="btn btn-outline-secondary m-1" fdprocessedid="sh46d8"><i class="bi bi-folder-symlink"> Show Post</i></a>
                                             <a href="{{ route('post.edit', $post) }}" type="button" class="btn btn-outline-success m-1 " fdprocessedid="sh46d8"><i class="bi bi-pencil-square"></i> Edit Post</a>
